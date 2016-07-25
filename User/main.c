@@ -45,7 +45,7 @@ u8 cishu=0,cishu1=0;
 
 int main(void)
 {
-		unsigned char Temp[11];
+		
 		char xianshi[7];
 		
 		//u8 i;
@@ -55,10 +55,10 @@ int main(void)
 		ADC_Configuration();
 		Timer2_Init(1000,7200);
 	  TIM3_PWM_Init(7200,1);
-	 	TIM_SetCompare1(TIM3,3600);
-		TIM_SetCompare2(TIM3,3600);
-		TIM_SetCompare3(TIM3,3600);
-		TIM_SetCompare4(TIM3,3600);
+	 	TIM_SetCompare1(TIM3,3600);//分别对应 电机1正
+		TIM_SetCompare2(TIM3,3600);//电机1反
+		TIM_SetCompare3(TIM3,3600);//电机2正
+		TIM_SetCompare4(TIM3,3600);//电机2反
 		TIM4_Configuration();
 		TIM1_Configuration();
 		TIM5_PWM_Init(9,1);
@@ -72,45 +72,17 @@ int main(void)
     LCD_ShowString(30,40,210,24,24, "anjian start ^_^");//显示测试  
    while (1)
    {
-      if(sign)
-      {  
-         memcpy(Temp,Re_buf,11);
-         sign=0;
-         if(Re_buf[0]==0x55)       //检查帧头
-         {  
-            switch(Re_buf[1])
-            {
-               case 0x51: //标识这个包是加速度包
-                  a[0] = ((short)(Temp[3]<<8 | Temp[2]))/32768.0*16;      //X轴加速度
-                  a[1] = ((short)(Temp[5]<<8 | Temp[4]))/32768.0*16;      //Y轴加速度
-                  a[2] = ((short)(Temp[7]<<8 | Temp[6]))/32768.0*16;      //Z轴加速度
-                  T    = ((short)(Temp[9]<<8 | Temp[8]))/340.0+36.25;      //温度
-                  break;
-               case 0x52: //标识这个包是角速度包
-                  w[0] = ((short)(Temp[3]<<8| Temp[2]))/32768.0*2000;      //X轴角速度
-                  w[1] = ((short)(Temp[5]<<8| Temp[4]))/32768.0*2000;      //Y轴角速度
-                  w[2] = ((short)(Temp[7]<<8| Temp[6]))/32768.0*2000;      //Z轴角速度
-                  T    = ((short)(Temp[9]<<8| Temp[8]))/340.0+36.25;      //温度
-                  break;
-               case 0x53: //标识这个包是角度包
-                  angle[0] = ((short)(Temp[3]<<8| Temp[2]))/32768.0*180;   //X轴滚转角（x 轴）
-                  angle[1] = ((short)(Temp[5]<<8| Temp[4]))/32768.0*180;   //Y轴俯仰角（y 轴）
-                  angle[2] = ((short)(Temp[7]<<8| Temp[6]))/32768.0*180;   //Z轴偏航角（z 轴）
-                  T        = ((short)(Temp[9]<<8| Temp[8]))/340.0+36.25;   //温度
-
-                  //printf("X轴角度：%.2f   Y轴角度：%.2f   Z轴角度：%.2f\r\n",angle[0],angle[1],angle[2]);
-                  break;
-               default:  break;
-            }
+      
 						cishu=TIM4->CNT;
 						cishu1=TIM1->CNT;
 						sprintf(xianshi,"%06.2f",angle[2]);//z轴 显示输出
 						LCD_ShowString(30,80,210,24,24,xianshi);
+		 
 						
 					
-         }
          
-      }
+         
+      
       //delay_ms(50);
    }
 }

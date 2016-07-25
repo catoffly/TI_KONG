@@ -37,5 +37,7 @@
 ..\obj\main.o: ..\MY_wen_jian\sys\sys.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\main.o: ..\MY_wen_jian\ADC\adc.h
-..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\main.o: ..\MY_wen_jian\ldc1000\LDC1000.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: ..\MY_wen_jian\PID\pid.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

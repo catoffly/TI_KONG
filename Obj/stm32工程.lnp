@@ -34,6 +34,8 @@
 "..\obj\adc.o"
 "..\obj\lcd.o"
 "..\obj\ldc1000.o"
+"..\obj\pid.o"
+"..\obj\dianji.o"
 --strict --scatter "..\Obj\stm32¹¤³Ì.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

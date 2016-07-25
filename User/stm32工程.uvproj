@@ -363,7 +363,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\Libraries\inc;..\User;..\MY_wen_jian\delay;..\MY_wen_jian\sys;..\MY_wen_jian\usart;..\MY_wen_jian\MY_time_Conf;..\MY_wen_jian\ADC;..\MY_wen_jian\TFT;..\MY_wen_jian\ldc1000</IncludePath>
+              <IncludePath>..\CORE;..\Libraries\inc;..\User;..\MY_wen_jian\delay;..\MY_wen_jian\sys;..\MY_wen_jian\usart;..\MY_wen_jian\MY_time_Conf;..\MY_wen_jian\ADC;..\MY_wen_jian\TFT;..\MY_wen_jian\ldc1000;..\MY_wen_jian\PID;..\MY_wen_jian\dianji</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -595,6 +595,16 @@
               <FileName>LDC1000.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MY_wen_jian\ldc1000\LDC1000.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MY_wen_jian\PID\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>dianji.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MY_wen_jian\dianji\dianji.c</FilePath>
             </File>
           </Files>
         </Group>

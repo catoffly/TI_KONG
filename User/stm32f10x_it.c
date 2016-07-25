@@ -54,7 +54,7 @@
 unsigned char Re_buf[11],temp_buf[11],counter=0;
 unsigned char sign,t,he;
 
-static unsigned char Temp[11];
+
 
 
 
@@ -305,7 +305,16 @@ void TIM2_IRQHandler(void)			   //定时器2全局中断服务函数
 	DATA_ADC=ADC_GetConversionValue(ADC1);
 	sprintf(xianshi1,"%04d",DATA_ADC);//z轴 显示输出
 	LCD_ShowString(30,110,210,24,24,xianshi1);
+	LDC_RP();
+	
+	sprintf(xianshi1,"%06x",Rp1);//z轴 显示输出
+	LCD_ShowString(30,110,210,24,24,xianshi1);
+	cishu=TIM4->CNT;
+	cishu1=TIM1->CNT;
+	TIM4->CNT=0;
+	TIM1->CNT=0;
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update); //清除中断标志位
+	
 }
 
 void TIM3_IRQHandler(void)			   //定时器3全局中断服务函数
@@ -377,20 +386,7 @@ void USART1_IRQHandler(void)		   //串口1全局中断服务函数
 void USART2_IRQHandler(void)		   //串口2全局中断服务函数
 {
 
-   if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //接收中断有效,若接收数据寄存器满
-     {
-				Temp[counter] = USART_ReceiveData(USART2);   //接收数据
-				//网购给的程序
-				//if(counter == 0 && Re_buf[0] != 0x55) return;      //第 0 号数据不是帧头，跳过
-				if(counter == 0 && Temp[0] != 0x55) return;      //第 0 号数据不是帧头，跳过
-				counter++; 
- 				if(counter==11) //接收到 11 个数据
-				{ 
-					 memcpy(Re_buf,Temp,11);
-					 counter=0; //重新赋值，准备下一帧数据的接收
-					 sign=1;
-				}    
-		}
+   
 		USART_ClearITPendingBit(USART2,USART_IT_RXNE);
 }
 

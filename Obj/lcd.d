@@ -37,7 +37,9 @@
 ..\obj\lcd.o: ..\MY_wen_jian\TFT\lcd.h
 ..\obj\lcd.o: ..\MY_wen_jian\ADC\adc.h
 ..\obj\lcd.o: ..\MY_wen_jian\sys\sys.h
-..\obj\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\lcd.o: ..\MY_wen_jian\ldc1000\LDC1000.h
+..\obj\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\lcd.o: ..\MY_wen_jian\PID\pid.h
+..\obj\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\lcd.o: ..\MY_wen_jian\TFT\font.h
