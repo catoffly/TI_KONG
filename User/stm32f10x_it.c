@@ -310,9 +310,9 @@ void TIM2_IRQHandler(void)			   //定时器2全局中断服务函数
 	sprintf(xianshi1,"%06x",Rp1);//z轴 显示输出
 	LCD_ShowString(30,110,210,24,24,xianshi1);
 	cishu=TIM4->CNT;
-	cishu1=TIM1->CNT;
+	cishu1=TIM8->CNT;
 	TIM4->CNT=0;
-	TIM1->CNT=0;
+	TIM8->CNT=0;
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update); //清除中断标志位
 	
 }

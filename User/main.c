@@ -59,8 +59,9 @@ int main(void)
 		TIM_SetCompare2(TIM3,3600);//电机1反
 		TIM_SetCompare3(TIM3,3600);//电机2正
 		TIM_SetCompare4(TIM3,3600);//电机2反
+		TIM1_Configuration(2000,7200);
 		TIM4_Configuration();
-		TIM1_Configuration();
+		TIM8_Configuration();
 		TIM5_PWM_Init(9,1);
 		LDC_SPI_Init();
 		LDC1000_init();
@@ -74,7 +75,7 @@ int main(void)
    {
       
 						cishu=TIM4->CNT;
-						cishu1=TIM1->CNT;
+						cishu1=TIM8->CNT;
 						sprintf(xianshi,"%06.2f",angle[2]);//z轴 显示输出
 						LCD_ShowString(30,80,210,24,24,xianshi);
 		 

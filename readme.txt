@@ -7,7 +7,7 @@ TIM3：pwm波输出  C 6/7/8/9
 
 TIM5：LDC1000 时钟 A 1
 
-USART1：A8/9 调试信息输出
+USART1：A10/9 调试信息输出
 USART2: A2/3
 SPI1: A4/5/6/7 C0/5
 

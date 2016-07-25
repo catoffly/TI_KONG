@@ -1,5 +1,5 @@
 Dependencies for Project 'stm32¹¤³Ì', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5795ADC7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5795C1E5)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
@@ -33,7 +33,7 @@ I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\sys\sys.h)(0x5795ADC7)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -41,7 +41,7 @@ I (..\MY_wen_jian\ldc1000\LDC1000.h)(0x578F55CE)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x54199D7C)
 I (..\MY_wen_jian\PID\pid.h)(0x5795ADC7)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x54199D7A)
-F (.\stm32f10x_it.c)(0x5795BD31)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
+F (.\stm32f10x_it.c)(0x5795BFC1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x515E1432)
 I (stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -76,7 +76,7 @@ I (..\MY_wen_jian\sys\sys.h)(0x5795ADC7)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -847,7 +847,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -855,8 +855,8 @@ I (..\MY_wen_jian\ldc1000\LDC1000.h)(0x578F55CE)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x54199D7C)
 I (..\MY_wen_jian\PID\pid.h)(0x5795ADC7)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x54199D7A)
-F (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.c)(0x5794C2AF)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\my_time_conf.o --omf_browse ..\obj\my_time_conf.crf --depend ..\obj\my_time_conf.d)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+F (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.c)(0x5795C1B9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Libraries\inc -I..\User -I..\MY_wen_jian\delay -I..\MY_wen_jian\sys -I..\MY_wen_jian\usart -I..\MY_wen_jian\MY_time_Conf -I..\MY_wen_jian\ADC -I..\MY_wen_jian\TFT -I..\MY_wen_jian\ldc1000 -I..\MY_wen_jian\PID -I..\MY_wen_jian\dianji-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\my_time_conf.o --omf_browse ..\obj\my_time_conf.crf --depend ..\obj\my_time_conf.d)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\User\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
@@ -918,7 +918,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -959,7 +959,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -1001,7 +1001,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
 I (..\MY_wen_jian\ldc1000\LDC1000.h)(0x578F55CE)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x54199D7C)
@@ -1073,7 +1073,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
@@ -1114,7 +1114,7 @@ I (..\Libraries\inc\misc.h)(0x4D783BB4)
 I (..\MY_wen_jian\delay\delay.h)(0x5152ADDF)
 I (..\MY_wen_jian\usart\usart.h)(0x525B4089)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5794C2AF)
+I (..\MY_wen_jian\MY_time_Conf\MY_time_Conf.h)(0x5795C1B9)
 I (..\MY_wen_jian\TFT\lcd.h)(0x56596F18)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54199D7C)
 I (..\MY_wen_jian\ADC\adc.h)(0x5794A838)
