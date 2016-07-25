@@ -26,21 +26,24 @@ void TIM1_Configuration(u16 arr,u16 psc)
 	TIM_TimeBaseStructure.TIM_ClockDivision = 0; //设置时钟分割:TDTS = Tck_tim
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  //TIM向上计数模式
 	TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure); //根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位
-	
+	TIM_ARRPreloadConfig(TIM1, ENABLE);
 
-	
-	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2; //选择定时器模式:TIM脉冲宽度调制模式2
- 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能
-	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low; //输出极性:TIM输出比较极性高
-	TIM_OC4Init(TIM1, &TIM_OCInitStructure);  //根据T指定的参数初始化外设TIM4 OC4
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;  
+	TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;    
+	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low  ;
+  TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;   
+	TIM_OCInitStructure.TIM_Pulse = 15;  //TIM1_Pulse设置了待装入捕获比较寄存器的脉冲值     
+	TIM_OC4Init(TIM1, &TIM_OCInitStructure); 
 
 
 	TIM_OC4PreloadConfig(TIM1, TIM_OCPreload_Enable);
 	
  
 	TIM_Cmd(TIM1, ENABLE);  //使能TIM3
+	TIM_CtrlPWMOutputs(TIM1,ENABLE);
 
- 	TIM_SetCompare4(TIM1,150);//舵机回中
+ 	TIM_SetCompare4(TIM1,135);//舵机回中
 }
 void Timer2_Init(u16 arr,u16 psc)  //定时器2初始化函数
 {

@@ -14,6 +14,8 @@
 #include "pid.h"
 #include <stdio.h>
 #include <math.h>
+#include "dianji.h"
+#include "pid.h"
 //位带操作,实现51类似的GPIO控制功能
 //具体实现思想,参考<<CM3权威指南>>第五章(87页~92页).
 //IO口操作宏定义
@@ -67,8 +69,8 @@ void GPIO_Configuration(void);	 //IO口配置
 void EXTI_Configuration(void);	 //中断IO口配置
 void NVIC_Configuration(void);	 //中断优先级配置
 
-extern u8 cishu,cishu1;
-
+extern u16 cishu,cishu1;
+extern u32 time_z;
 #endif
 
 

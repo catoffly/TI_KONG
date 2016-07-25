@@ -42,3 +42,4 @@
 ..\obj\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\stm32f10x_it.o: ..\MY_wen_jian\PID\pid.h
 ..\obj\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\stm32f10x_it.o: ..\MY_wen_jian\dianji\dianji.h

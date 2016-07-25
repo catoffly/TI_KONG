@@ -15,4 +15,5 @@ struct PID
 };
 extern struct PID dianji1;
 extern struct PID dianji2;
+void pid(void);
 #endif

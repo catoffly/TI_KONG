@@ -1,7 +1,7 @@
 #include "pid.h"
 
-struct PID dianji1 = {0 , 0 , 0 , 0 , 0 , 0 , 0 , 0};//P I D QIWANG EK EK1 UK
-struct PID dianji2 = {0 , 0 , 0 , 0 , 0 , 0 , 0 , 0};
+struct PID dianji1 = {280 , 0 , 500 , 30 , 0 , 0 , 0 , 0};//P I D QIWANG EK EK1 UK
+struct PID dianji2 = {270 , 0 , 500 , 30 , 0 , 0 , 0 , 0};
 
 void pid(void)
 {

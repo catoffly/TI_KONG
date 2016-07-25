@@ -41,3 +41,4 @@
 ..\obj\sys.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\sys.o: ..\MY_wen_jian\PID\pid.h
 ..\obj\sys.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\sys.o: ..\MY_wen_jian\dianji\dianji.h

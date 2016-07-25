@@ -29,7 +29,7 @@ float a[3],w[3],angle[3],T;
 extern unsigned char Re_buf[11],temp_buf[11],counter;
 extern unsigned char sign;
 
-u8 cishu=0,cishu1=0;
+u16 cishu=0,cishu1=0;
 
 
 
@@ -53,13 +53,13 @@ int main(void)
 		RCC_Configuration();      //初始化时钟
 		delay_init(72);            //初始化延时函数
 		ADC_Configuration();
-		Timer2_Init(1000,7200);
+		Timer2_Init(100,7200);
 	  TIM3_PWM_Init(7200,1);
 	 	TIM_SetCompare1(TIM3,3600);//分别对应 电机1正
 		TIM_SetCompare2(TIM3,3600);//电机1反
 		TIM_SetCompare3(TIM3,3600);//电机2正
 		TIM_SetCompare4(TIM3,3600);//电机2反
-		TIM1_Configuration(2000,7200);
+		TIM1_Configuration(2000,720);
 		TIM4_Configuration();
 		TIM8_Configuration();
 		TIM5_PWM_Init(9,1);
@@ -74,11 +74,11 @@ int main(void)
    while (1)
    {
       
-						cishu=TIM4->CNT;
-						cishu1=TIM8->CNT;
-						sprintf(xianshi,"%06.2f",angle[2]);//z轴 显示输出
-						LCD_ShowString(30,80,210,24,24,xianshi);
-		 
+//						cishu=TIM4->CNT;
+//						cishu1=TIM8->CNT;
+//						sprintf(xianshi,"%06.2f",angle[2]);//z轴 显示输出
+//						LCD_ShowString(30,80,210,24,24,xianshi);
+//		 
 						
 					
          

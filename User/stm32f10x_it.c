@@ -53,7 +53,7 @@
 
 unsigned char Re_buf[11],temp_buf[11],counter=0;
 unsigned char sign,t,he;
-
+u32 time_z;
 
 
 
@@ -172,147 +172,42 @@ void PendSV_Handler(void)
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void)
-{
-}
-
-void WWDG_IRQHandler(void)		 //窗口定时器中断服务函数
-{
-}
-
-void PVD_IRQHandler(void)		 //联到EXTI的电源电压检测（PVD）中断服务函数
-{
-}
-
-void TAMPER_IRQHandler(void)	 //侵入检测中断服务函数
-{
-}
-
-void RTC_IRQHandler(void)		 //实时时钟（RTC）全局中断服务函数
-{
-
-}
-
-void FLASH_IRQHandler(void)		 //闪存全局中断服务函数
-{
-}
-
-void RCC_IRQHandler(void)		 //复位和时钟控制（RCC）中断服务函数
-{
-}
-
-void EXTI0_IRQHandler(void)		 //EXTI线0中断服务函数
-{
-
-}
-
-void EXTI1_IRQHandler(void)		 //EXTI线1中断服务函数
-{
-
-}
-
-void EXTI2_IRQHandler(void)		 //EXTI线2中断服务函数
-{
-}
-
-void EXTI3_IRQHandler(void)		 //EXTI线3中断服务函数
-{
-}
-
-void EXTI4_IRQHandler(void)		 //EXTI线4中断服务函数
-{
- 
-}
-
-void DMA1_Channel1_IRQHandler(void)	   //DMA1通道1全局中断服务函数
-{
-}
-
-void DMA1_Channel2_IRQHandler(void)	   //DMA1通道2全局中断服务函数
-{
-}
-
-void DMA1_Channel3_IRQHandler(void)	   //DMA1通道3全局中断服务函数
-{
-}
-
-void DMA1_Channel4_IRQHandler(void)	   //DMA1通道4全局中断服务函数
-{
-
-}
-
-void DMA1_Channel5_IRQHandler(void)	   //DMA1通道5全局中断服务函数
-{
-
-}
-
-void DMA1_Channel6_IRQHandler(void)	   //DMA1通道6全局中断服务函数
-{
-}
-
-void DMA1_Channel7_IRQHandler(void)	   //DMA1通道7全局中断服务函数
-{
-}
-
-void ADC1_2_IRQHandler(void)		   //ADC全局中断服务函数
-{
-
-}
-
-void USB_HP_CAN_TX_IRQHandler(void)	   //USB高优先级或CAN发送中断服务函数
-{
-}
-
-void USB_LP_CAN_RX0_IRQHandler(void)   //USB低优先级或CAN接收0中断服务函数
-{
-}
-
-void CAN_RX1_IRQHandler(void)		   //CAN接收1中断服务函数
-{
-}
-
-void CAN_SCE_IRQHandler(void)		   //CAN SCE中断服务函数
-{
-}
-
-void EXTI9_5_IRQHandler(void)		   //外部中断9线【9:5】中断服务函数
-{
-
-}
-
-void TIM1_BRK_IRQHandler(void)		   //定时器1断开中断服务函数
-{
-}
-
-void TIM1_UP_IRQHandler(void)		   //定时器1更新中断服务函数
-{
-}
-
-void TIM1_TRG_COM_IRQHandler(void)	   //定时器1触发和通信中断服务函数
-{
-}
-
-void TIM1_CC_IRQHandler(void)		   //定时器1捕获比较中断服务函数
-{
-}
 
 void TIM2_IRQHandler(void)			   //定时器2全局中断服务函数
 {
 
 	char xianshi1[5];
+	
 	ADC_SoftwareStartConvCmd(ADC1,ENABLE);//ADC 软件启动
 	while(!ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC));
 	DATA_ADC=ADC_GetConversionValue(ADC1);
-	sprintf(xianshi1,"%04d",DATA_ADC);//z轴 显示输出
-	LCD_ShowString(30,110,210,24,24,xianshi1);
+//	sprintf(xianshi1,"%04d",DATA_ADC);//z轴 显示输出
+//	LCD_ShowString(30,110,210,24,24,xianshi1);
+	pid();
+	dianji1_con();
+	dianji2_con();
 	LDC_RP();
+	sprintf(xianshi1,"%04d",Rp1);//z轴 显示输出
+		LCD_ShowString(30,110,210,24,24,xianshi1);
+	time_z++;
+	if(time_z%10==0)
+	{
+		cishu=TIM4->CNT;
+		cishu1=TIM8->CNT;
+		TIM4->CNT=0;
+		TIM8->CNT=0;
+
+	}
+	if(time_z%50==0)
+	{
+		sprintf(xianshi1,"%04d",Rp1);//z轴 显示输出
+		LCD_ShowString(30,110,210,24,24,xianshi1);
+		sprintf(xianshi1,"%04d",cishu);//z轴 显示输出
+		LCD_ShowString(30,140,210,24,24,xianshi1);
+		sprintf(xianshi1,"%04d",cishu1);//z轴 显示输出
+		LCD_ShowString(30,160,210,24,24,xianshi1);
 	
-	sprintf(xianshi1,"%06x",Rp1);//z轴 显示输出
-	LCD_ShowString(30,110,210,24,24,xianshi1);
-	cishu=TIM4->CNT;
-	cishu1=TIM8->CNT;
-	TIM4->CNT=0;
-	TIM8->CNT=0;
+	}
 	TIM_ClearITPendingBit(TIM2, TIM_IT_Update); //清除中断标志位
 	
 }
@@ -350,29 +245,7 @@ void TIM4_IRQHandler(void)			   //定时器4全局中断服务函数
 //	TIM4->SR &= ~(1<<0);//清除中断标志位
 }
 
-void I2C1_EV_IRQHandler(void)		   //I2C1事件中断服务函数
-{
-}
 
-void I2C1_ER_IRQHandler(void)		   //I2C1错误中断服务函数
-{
-}
-
-void I2C2_EV_IRQHandler(void)		   //I2C2事件中断服务函数
-{
-}
-
-void I2C2_ER_IRQHandler(void)		   //I2C2错误中断服务函数
-{
-}
-
-void SPI1_IRQHandler(void)			   //SPI1全局中断服务函数
-{
-}
-
-void SPI2_IRQHandler(void)			   //SPI2全局中断服务函数
-{
-}
 
 void USART1_IRQHandler(void)		   //串口1全局中断服务函数
 {
@@ -400,97 +273,14 @@ void USART3_IRQHandler(void)		   //串口3全局中断服务函数
 	USART_ClearITPendingBit(USART3,USART_IT_RXNE);
 }
 
-void EXTI15_10_IRQHandler(void)		   //外部中断10【15:10】中断服务函数
-{
-
-}
-
-void RTCAlarm_IRQHandler(void)		   //联到EXTI的RTC闹钟中断服务函数
-{
-}
-
-void USBWakeUp_IRQHandler(void)		   //联到EXTI的从USB待机唤醒中断服务函数
-{
-}
-
-void TIM8_BRK_IRQHandler(void)		   //定时器8断开中断服务函数
-{
-}
-
-void TIM8_UP_IRQHandler(void)		   //定时器8更新中断服务函数
-{
-}
-
-void TIM8_TRG_COM_IRQHandler(void)	   //定时器8触发和通信中断服务函数
-{
-}
-
-void TIM8_CC_IRQHandler(void)		   //定时器8捕获比较中断服务函数
-{
-}
-
-void ADC3_IRQHandler(void)			   //ADC3全局中断服务函数
-{
-}
-
-void FSMC_IRQHandler(void)			   //FSMC全局中断服务函数
-{
-}
-
-void SDIO_IRQHandler(void)			   //SDIO全局中断服务函数
-{
-}
-
-void TIM5_IRQHandler(void)			   //定时器5全局中断服务函数
-{
-//	if(TIM5->SR & 0X0001)//溢出中断
-//	{	
-		    				   				     	    	
-//	}				   
-//	TIM5->SR &= ~(1<<0);//清除中断标志位
-}
-
-void SPI3_IRQHandler(void)			   //SPI3全局中断服务函数
-{
-}
 
 
 
 
 
-void TIM6_IRQHandler(void)			   //定时器6全局中断服务函数
-{
-//	if(TIM6->SR & 0X0001)//溢出中断
-//	{	
-	    				   				     	    	
-//	}				   
-//	TIM6->SR &= ~(1<<0);//清除中断标志位
-}
 
-void TIM7_IRQHandler(void)			   //定时器7全局中断服务函数
-{
-//	if(TIM7->SR & 0X0001)//溢出中断
-//	{	
 
-//	}				   
-//	TIM7->SR &= ~(1<<0);//清除中断标志位
-}
 
-void DMA2_Channel1_IRQHandler(void)	   //DMA2通道1全局中断服务函数
-{
-}
-
-void DMA2_Channel2_IRQHandler(void)	   //DMA2通道2全局中断服务函数
-{
-}
-
-void DMA2_Channel3_IRQHandler(void)	   //DMA2通道3全局中断服务函数
-{
-}
-
-void DMA2_Channel4_5_IRQHandler(void)  //DMA2通道4和DMA2通道5全局中断服务函数
-{
-}
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */
